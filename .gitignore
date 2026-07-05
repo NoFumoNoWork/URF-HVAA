@@ -15,4 +15,9 @@ data/*
 !data/README.md
 .agents/
 .env.example
-outputs/
+env.txt
+
+outputs/**
+!outputs/**/
+!outputs/**/*.md
+!outputs/**/*.png
