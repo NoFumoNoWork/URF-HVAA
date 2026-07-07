@@ -24,3 +24,7 @@ Each archive folder should contain:
 - `outputs/26-07-07-15-14-gt-score-alignment-analysis/`
 - `outputs/26-07-07-15-59-interval-method-evaluation/`
 - `outputs/26-07-07-spectral-score-decomposition/`
+- `outputs/26-07-07-18-52-spectral-param-scan/`
+- `outputs/26-07-07-19-33-spectral-ablation-study/`
+- `outputs/26-07-07-19-51-spectral-pipeline-ablation/`
+- `outputs/26-07-07-20-14-spectral-final-materials/`

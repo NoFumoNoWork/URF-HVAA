@@ -59,3 +59,20 @@
 
 - 点越靠右，预测越干净；点越靠上，GT 覆盖越多
 - 理想方法在右上角。
+
+
+
+---
+
+fig_recall_vs_strict_tradeoff.png
+
+![fig_recall_vs_strict_tradeoff](T:\Bigwork\SMILES.URF-HVAA\key_figs\fig_recall_vs_strict_tradeoff.png)
+
+- 横轴：stricter balanced score；
+- 纵轴：GT coverage；
+- 颜色：unsupported coverage。
+
+理想上，越右上越好，颜色越浅越好。
+
+recall trend=0.5, SG=0, residual=0.25的效果最好，但unsupported rate不是最低
+
