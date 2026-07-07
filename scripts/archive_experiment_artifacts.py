@@ -103,12 +103,40 @@ EXPERIMENTS = [
             "outputs/adaptive_param_grid_tradeoff.png",
         ],
     ),
+    Experiment(
+        timestamp="26-07-06-08-39",
+        name="hierarchical-intervals",
+        report="reports/hierarchical_interval_report.md",
+        extra_reports=[],
+        programs=[
+            "src/adaptive_interval_selection.py",
+            "scripts/anomaly_utils.py",
+            "scripts/generate_hierarchical_intervals.py",
+            "scripts/evaluate_hierarchical_intervals.py",
+            "scripts/plot_hierarchical_timeline.py",
+        ],
+        outputs=["outputs/hierarchical_intervals"],
+    ),
+    Experiment(
+        timestamp="26-07-07-01-08",
+        name="peak-aware-refinement",
+        report="outputs/26-07-07-01-08-peak-aware-refinement/peak-aware-refinement_report.md",
+        extra_reports=[],
+        programs=[
+            "src/peak_refinement.py",
+            "scripts/run_peak_refinement.py",
+            "scripts/sanity_check_peak_refinement.py",
+        ],
+        outputs=["outputs/26-07-07-01-08-peak-aware-refinement/outputs/peak_refinement"],
+    ),
 ]
 
 
 def copy_path(src: Path, dst: Path) -> str:
     if not src.exists():
         return f"missing: {src}"
+    if src.resolve() == dst.resolve():
+        return f"already in place: {src}"
     dst.parent.mkdir(parents=True, exist_ok=True)
     if src.is_dir():
         if dst.exists():
@@ -184,13 +212,18 @@ def write_index(root: Path, archived: list[Experiment]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=Path.cwd())
+    parser.add_argument("--only", help="Archive only the named experiment.")
     args = parser.parse_args()
     root = args.root.resolve()
 
-    for exp in EXPERIMENTS:
+    selected = [exp for exp in EXPERIMENTS if args.only in (None, exp.name)]
+    if args.only and not selected:
+        raise SystemExit(f"unknown experiment: {args.only}")
+
+    for exp in selected:
         archive_experiment(root, exp)
     write_index(root, EXPERIMENTS)
-    print(f"Archived {len(EXPERIMENTS)} experiments under outputs/")
+    print(f"Archived {len(selected)} experiments under outputs/")
 
 
 if __name__ == "__main__":
