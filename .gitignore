@@ -9,17 +9,29 @@ data/*/frames/
 libs/llama/llama3.1-8b/
 
 records/
+
 /*.md
 !/README.md
+!/reproduction_notes.md
+/.gitignore
+/*.ps1
+/*.sh
+
 data/*
 !data/README.md
 .agents/
+.vscode/
 .env.example
 env.txt
 
 outputs/**
-!outputs/**/
-!outputs/**/*.md
-!outputs/**/*.png
+!outputs/26-07-08-11-15-low-fp-visualization/
+!outputs/26-07-08-11-15-low-fp-visualization/**
 
+reports/**
 papers/
+
+scripts/tmp_*.py
+scripts/scratch_*.py
+scripts/*_local.py
+scripts/*.sh

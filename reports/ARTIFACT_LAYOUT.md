@@ -34,6 +34,7 @@ Each archive folder should contain:
 - `outputs/26-07-07-22-08-interval-eval-low-fp/`
 - `outputs/26-07-07-22-31-negative-evidence-valley/`
 - `outputs/26-07-07-22-50-low-fp-ablation-scan/`: final Low-FP with valley cut local ablation/scan archive, including root report copy, reports, diagnostics, plots, manifest, and generator copy.
+- `outputs/26-07-08-11-15-low-fp-visualization/`: low-FP final per-video visualization archive with four-row plots, index CSV, summary JSON, manifest, and generator copy.
 
 ## Non-Archive Report Packages
 

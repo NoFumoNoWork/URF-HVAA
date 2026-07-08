@@ -1,0 +1,13 @@
+{
+  "plot_count": 640,
+  "output_dir": "outputs/26-07-08-11-15-low-fp-visualization",
+  "plots_dir": "outputs/26-07-08-11-15-low-fp-visualization/outputs/low_fp_visualizations",
+  "source_archive": "outputs/26-07-07-22-50-low-fp-ablation-scan",
+  "warnings": 0,
+  "layout": [
+    "row1 anomaly score + supportable/uncertain/unsupportable GT",
+    "row2 final low-FP abnormal intervals",
+    "row3 valley-cut removed intervals",
+    "row4 100F smoothed score with unmarked >0.75 peaks and marked <0.25 segments"
+  ]
+}
