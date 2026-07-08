@@ -11,11 +11,9 @@ libs/llama/llama3.1-8b/
 records/
 
 /*.md
-!/README.md
+!/README*.md
 !/reproduction_notes.md
-/.gitignore
-/*.ps1
-/*.sh
+
 
 data/*
 !data/README.md
@@ -27,6 +25,7 @@ env.txt
 outputs/**
 !outputs/26-07-08-11-15-low-fp-visualization/
 !outputs/26-07-08-11-15-low-fp-visualization/**
+!outputs/use.txt
 
 reports/**
 papers/
@@ -35,3 +34,4 @@ scripts/tmp_*.py
 scripts/scratch_*.py
 scripts/*_local.py
 scripts/*.sh
+scripts/*.ps1
