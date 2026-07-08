@@ -64,7 +64,35 @@
 
 ---
 
-fig_recall_vs_strict_tradeoff.png
+### fig_param_sensitivity_fusion_threshold.png
+
+![image-20260707210931299](T:\Bigwork\SMILES.URF-HVAA\key_figs\fig_param_sensitivity_fusion_threshold.png)
+
+unsupportable指代人工 GT 标注为异常，但在 VAD/anomaly score 曲线上没有足够分数证据支持的那部分 GT
+
+阈值是系统对interval计算的综合分数，报告里说 Spectral-Fusion-Refined 会融合多种证据，包括 normalized raw、SG、residual、trend、peak-count、length、low-residual evidence。
+
+`fusion_threshold` 越高，要求越严格：
+
+- 证据不够强的候选区间会被删掉；
+
+- 预测区间会变少、变短；
+
+- coverage 会下降；
+
+- purity 会上升；
+
+- unsupportable coverage 会下降。
+
+低 fusion_threshold 会保留更多边缘候选区间，于是覆盖更多 GT，但也会覆盖很多 score 不支持的人工 GT。
+
+**阈值越高，预测越保守，覆盖率下降，但纯度上升，区间变短，unsupported 覆盖减少。**
+
+
+
+---
+
+### fig_recall_vs_strict_tradeoff.png
 
 ![fig_recall_vs_strict_tradeoff](T:\Bigwork\SMILES.URF-HVAA\key_figs\fig_recall_vs_strict_tradeoff.png)
 
