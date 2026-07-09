@@ -1,0 +1,65 @@
+config_name: low_fp_with_valley_cut_final
+selected_from: outputs/26-07-07-22-50-low-fp-ablation-scan/reports/low_fp_parameter_scan_summary.csv
+selection_reason: "precision-first low-FP operating point with valley-cut negative evidence postprocess; selected from prior ablation archive, not rerun in this stage"
+metrics:
+  Eval Recall: 0.696
+  FP Duration: 347264.000
+  FP Ratio in PI: 0.448
+  FP Removed by NI: 3300.000
+  GT Precision: 0.552
+  NI-over-sGT Ratio: 0.071
+  NI-over-ucGT Ratio: 0.016
+  NI-over-usGT Ratio: 0.017
+  PI Ratio: 0.489
+  Parameter: fusion_threshold
+  TP Lost by NI: 0.000
+  Value: 0.380
+  Variant: scan_fusion_threshold_0p38
+  s-GT Recall: 0.705
+  uc-GT Recall: 0.443
+  us-GT Coverage: 0.104
+parameters:
+  airpls_lambda: 1000
+  allow_cut_inside_usgt: true
+  block_merge_across_normal_anchor: true
+  configuration_type: final-precision-first
+  cut_pi_by_normal_anchor: true
+  disabled_components: ""
+  enable_airpls: true
+  enable_negative_evidence_postprocess: true
+  enable_sg: true
+  enable_trend: true
+  enabled_components: "raw, sg, residual, trend, peak_count, length_penalty, low_residual_penalty"
+  fusion_threshold: 0.38
+  length_penalty_weight: 0.22
+  low_residual_penalty_weight: 0.15
+  low_score_threshold: 0.35
+  max_normal_std: 0.12
+  merge_gap_frames: 32
+  min_normal_duration: 96
+  normal_anchor_margin: 8
+  peak_count_weight: 0.0
+  peak_mad_k: 3.0
+  peak_stop_ratio: 0.25
+  post_min_duration: 32
+  post_min_raw_max: 0.6
+  protect_sgt_ucgt: true
+  raw_low_threshold: 0.35
+  raw_weight: 0.25
+  require_no_peaks: true
+  residual_candidate_generation_enabled: true
+  residual_low_threshold: 0.05
+  residual_mad_k: 3.0
+  residual_weight: 0.25
+  run_name: scan_fusion_threshold_0p38
+  sg_candidate_generation_enabled: true
+  sg_polyorder: 2
+  sg_smoothing_enabled: true
+  sg_weight: 0.0
+  sg_window_length: 17
+  shrink_pi_boundary_by_normal_anchor: true
+  trend_candidate_generation_enabled: true
+  trend_low_threshold: 0.45
+  trend_threshold: 0.6
+  trend_weight: 0.2
+  trend_window: 100

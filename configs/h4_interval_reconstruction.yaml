@@ -1,0 +1,51 @@
+paths:
+  canonical_timeline: outputs/26-07-09-15-25-h4-resource-prep/canonical_timeline.csv
+  prediction_intervals: outputs/26-07-09-15-25-h4-resource-prep/prediction_intervals.csv
+  prediction_gaps: outputs/26-07-09-15-25-h4-resource-prep/prediction_gaps.csv
+  h4_diagnostic_table: outputs/26-07-09-15-25-h4-resource-prep/h4_diagnostic_table.csv
+  output_dir: outputs/26-07-09-15-25-h4-resource-prep/future_experiments
+
+prediction:
+  score_thresholds: [0.3, 0.4, 0.5, 0.6, 0.7]
+  min_interval_len: [1, 5, 10]
+  merge_adjacent_gap: [0, 5, 10]
+
+h4:
+  h4_window: [15, 30, 60, 100, 150, 300]
+  h4_score_min: [0.0, 0.3, 0.5, 0.7]
+  allowed_h4_types:
+    - explicit_transition
+    - topic_shift
+    - multi_scene_compression
+    - score_drop_coupling
+    - possible_context_forgetting
+    - unknown
+
+gap_merge:
+  gap_max_len: [30, 60, 100, 150, 300]
+  require_h4: [true, false]
+  require_score_dip: [true, false]
+  left_score_min: [0.4, 0.5, 0.6]
+  right_score_min: [0.4, 0.5, 0.6]
+  gap_score_max: [0.2, 0.3, 0.4]
+
+semantic_continuity:
+  enabled: false
+  method: "placeholder"
+  threshold: [0.3, 0.5, 0.7]
+  notes: "Do not assume scene switch means new scene. Continuity may include same event, new viewpoint, related consequence, or narrative jump."
+
+evaluation:
+  metrics:
+    - frame_precision
+    - frame_recall
+    - frame_f1
+    - segment_precision
+    - segment_recall
+    - segment_f1
+    - gt_fragmentation_ratio
+    - false_positive_duration
+    - true_positive_gain
+    - false_positive_gain
+    - tp_fp_gain_ratio
+    - net_merge_utility
